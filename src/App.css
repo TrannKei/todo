@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+.container{
+    width: 40vw;
+    background-color: lightgray;
+    margin: 40px auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    overflow: scroll;
+}
+.add-todo{
+    width: 70%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.add-todo > input{
+    width: 70%;
+    height: 35px;
+    padding: 5px 20px;
+    font-size: 1.2rem;
+}
+.add-todo > button{
+    width: 20%;
+    /* background-color: aqua; */
+    cursor: pointer;
+}
+.item-show{
+    display: flex;
+    flex-direction: row;
+    /* width: ; */
+    justify-content: space-between;
+    background: rgb(244, 244, 244);
+    margin: 10px 0;
+    padding: 0 20px;
+}
+.show-todo{
+    width: 70%;
+}
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+    justify-content: space-between;
+    transition: all 2s ease;
+}
+.checkbox > input:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.checkbox > p:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
