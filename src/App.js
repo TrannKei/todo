@@ -19,6 +19,7 @@ const App = () => {
 				<div className='show-todo'>
 					<ShowTodo />
 				</div>
+			<p>Double click để chỉnh sửa, Enter để confirm</p>
 			</div>
 		</ UserContext.Provider>
 	)

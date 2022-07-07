@@ -33,6 +33,10 @@
     background: rgb(244, 244, 244);
     margin: 10px 0;
     padding: 0 20px;
+    height: 50px;
+    font-size: 1rem;
+    align-items: center;
+
 }
 .show-todo{
     width: 70%;
@@ -40,16 +44,32 @@
 .checkbox{
     display: flex;
     flex-direction: row;
-    width: 10%;
+    width: 15%;
     justify-content: space-between;
-    transition: all 2s ease;
+    transition: all 1s ease;
+    align-items: center;
+    font-size: 1.5rem;
 }
-.checkbox > input:hover{
+svg{
+    width: 24px;
+    height: 24px;
+}
+.checkbox > svg:hover{
     cursor: pointer;
     transform: scale(1.1);
+    color: blue;
 }
 .checkbox > p:hover{
     transform: scale(1.1);
+    color: blue;
     cursor: pointer;
 }
-
+.complete{
+    background-color: rgb(14, 194, 68);
+    color: rgb(255, 253, 253);
+}
+.input-edit{
+    font-size: 1rem;
+    padding: 5px;
+    /* border: 1; */
+}
