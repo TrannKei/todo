@@ -29,34 +29,43 @@ export const ShowTodo = () => {
         const onClickEdit = data.map((item) => {
             if (item.id === id) {
                 item.isEdit = !item.isEdit
-                // item.title = input
+                // setInput(item.title)
             }
             return item
         })
         setData(onClickEdit)
-        // console.log(data);
     }
-    
-    const [input, setInput] = useState("")
-    const handleChange = (event) => {
-        setInput(event.target.value)
+
+   
+        const [input, setInput] = useState("")
+        const handleChange = (event, item) => {
+            setInput(event.target.value)
+            console.log(item.id);
 
 
-    }
-    const handleKeyDown = (event, id)=>{
-        if (event.key === 'Enter') {
-            const onClickEdit = data.map((item) => {
-                if (item.id === id) {
-                    item.isEdit = false
-                    item.title = input
-                   
-                }
-                return item
-            })
-            setData(onClickEdit)
-            console.log(data);
-          }
-    }
+        }
+        const handleKeyDown = (event, id) => {
+            if (event.key === 'Enter' && input ) {
+                const onClickEdit = data.map((item) => {
+
+                    if (item.id === id) {
+                        item.isEdit = false
+                        item.title = input
+                        setInput("")
+
+                    }
+                    return item
+                })
+                setData(onClickEdit)
+                console.log(data);
+            }
+
+        }
+        
+
+
+
+
 
     return (
         <>
@@ -66,17 +75,18 @@ export const ShowTodo = () => {
                         onDoubleClick={() => editItem(item.id)}
                         className={item.isComplete ? 'item-show complete' : 'item-show'}
                         key={item.id}
-                        // onBlur={saveChange}
+                    // onBlur={saveChange}
                     >
-                        {item.isEdit ?
-                            <input type='text'
-                                className="input-edit"
-                                // value={item.title}
-                                placeholder={item.title}
-                                onKeyDown={(event)=> handleKeyDown(event, item.id)}
-                                onChange={(event) => handleChange(event, item.id)}
+                        {item.isEdit ? <input type='text'
+                            className="input-edit"
+                            // value={input}
+                            placeholder={item.title}
+                            key={item.id}
+                            onKeyDown={(event) => handleKeyDown(event, item.id)}
+                            onChange={(event) => setInput(event.target.value)}
 
-                            /> :
+                        />
+                            :
                             <p>{item.title}</p>}
                         <div className="checkbox">
                             <AiOutlineCheckCircle onClick={() => checkbox(item.id)} />

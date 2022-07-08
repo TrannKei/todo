@@ -17,7 +17,8 @@ export const AddTodo = () => {
         id:  Math.floor(Math.random() * 10000) + 1,
         title: input,
         isComplete: false,
-        isEdit: false
+        isEdit: false,
+        readyToEdit: input
        }
        setData([...data, beforeData])
     // const fake = [...data]
